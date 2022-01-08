@@ -8,12 +8,12 @@ public class Calculator {
         return x + y;
     }
 
-    public int multiply(int a) {
-        return x * a;
-    }
-
     public static int minus(int b) {
         return b - x;
+    }
+
+    public int multiply(int a) {
+        return x * a;
     }
 
     public int divide(int c) {
@@ -21,9 +21,8 @@ public class Calculator {
     }
 
     public int sumAllOperation(int d) {
-        Calculator calculator = new Calculator();
-        return Calculator.sum(d) + calculator.multiply(d)
-                + calculator.minus(d) + calculator.divide(d);
+        return sum(d) + multiply(d)
+                + minus(d) + divide(d);
     }
 
     public static void main(String[] args) {
