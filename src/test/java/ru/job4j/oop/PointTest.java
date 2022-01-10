@@ -9,7 +9,7 @@ import static org.junit.Assert.assertThat;
 public class PointTest {
 
     @Test
-    public void testDistance5() {
+    public void when00and50then5() {
         Point first = new Point(0, 0);
         Point second = new Point(5, 0);
         double result = first.distance(second);
@@ -18,16 +18,16 @@ public class PointTest {
     }
 
     @Test
-    public void testDistanceSqrt2() {
+    public void when00and11then1dot414() {
         Point first = new Point(0, 0);
         Point second = new Point(1, 1);
         double result = first.distance(second);
-        double expected = sqrt(2);
+        double expected = 1.414;
         assertThat(result, closeTo(expected, 0.001));
     }
 
     @Test
-    public void testDistance3d5() {
+    public void when000and500then5() {
         Point first = new Point(0, 0, 0);
         Point second = new Point(5, 0, 0);
         double result = first.distance3d(second);
@@ -36,11 +36,11 @@ public class PointTest {
     }
 
     @Test
-    public void testDistance3dSqrt3() {
+    public void when000and111then1dot732() {
         Point first = new Point(0, 0, 0);
         Point second = new Point(1, 1, 1);
         double result = first.distance3d(second);
-        double expected = sqrt(3);
+        double expected = 1.732;
         assertThat(result, closeTo(expected, 0.001));
     }
 }
