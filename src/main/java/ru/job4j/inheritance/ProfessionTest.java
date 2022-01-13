@@ -2,8 +2,8 @@ package ru.job4j.inheritance;
 
 public class ProfessionTest {
     public static void main(String[] args) {
-        Surgeon surgen = new Surgeon("Болит нога", "нога");
-        surgen.makeDiagnosis();
-        surgen.cut();
+        Surgeon surgeon = new Surgeon("Иван", "Иванов", "высшее", "в январе", "Болит нога", "нога");
+        surgeon.makeDiagnosis();
+        surgeon.cut();
     }
 }

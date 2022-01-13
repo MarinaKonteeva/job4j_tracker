@@ -4,12 +4,8 @@ public class Engineer extends Profession {
 
     private String typeProject;
 
-    public Engineer(String name, String surname, String education, String birthday) {
+    public Engineer(String name, String surname, String education, String birthday, String typeProject) {
         super(name, surname, education, birthday);
-    }
-
-    public Engineer(String typeProject) {
-        super();
         this.typeProject = typeProject;
     }
 

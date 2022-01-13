@@ -29,8 +29,4 @@ public class Profession {
         this.education = education;
         this.birthday = birthday;
     }
-
-    public Profession() {
-    }
-
 }
