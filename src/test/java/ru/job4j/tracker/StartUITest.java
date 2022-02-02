@@ -94,33 +94,31 @@ public class StartUITest {
     }
 
     @Test
-    public void whenFindAllByNameActionTestOutputIsSuccessfully() {
+    public void whenShowAllActionTestOutputIsSuccessfully() {
         Output out = new StubOutput();
         Tracker tracker = new Tracker();
         Item one = tracker.add(new Item("test1"));
         Item two = tracker.add(new Item("test2"));
-        Item three = tracker.add(new Item("test1"));
-        Item four = tracker.add(new Item("test3"));
         Input in = new StubInput(
-                new String[] {"0", "test1", "1"}
+                new String[] {"0", "1"}
         );
         UserAction[] actions = new UserAction[]{
-                new FindNameAction(out),
+                new ShowAction(out),
                 new ExitAction(out)
         };
         new StartUI(out).init(in, tracker, actions);
         String ln = System.lineSeparator();
         String item1 = one.toString();
-        String item2 = three.toString();
+        String item2 = two.toString();
         assertThat(out.toString(), is(
                 "Menu."  + ln
-                        + "0. Find items by name" + ln
+                        + "0. Show all items" + ln
                         + "1. Exit" + ln
-                        + "=== Find items by name ===" + ln
+                        + "=== Show all items ===" + ln
                         + item1 + ln
                         + item2 + ln
                         + "Menu." + ln
-                        + "0. Find items by name" + ln
+                        + "0. Show all items" + ln
                         + "1. Exit" + ln
                         + "=== Exit ===" + ln
         ));
