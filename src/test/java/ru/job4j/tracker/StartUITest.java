@@ -158,4 +158,39 @@ public class StartUITest {
         assertThat(selected, is(1));
     }
 
+    @Test
+    public void whenInput1() {
+        Output out = new StubOutput();
+        Input in = new StubInput(
+                new String[] {"1"}
+        );
+        ValidateInput input = new ValidateInput(out, in);
+        int selected = input.askInt("Enter menu:");
+        assertThat(selected, is(1));
+    }
+
+    @Test
+    public void whenInput111() {
+        Output out = new StubOutput();
+        Input in = new StubInput(
+                new String[] {"1", "1", "1"}
+        );
+        ValidateInput input = new ValidateInput(out, in);
+        int selected = input.askInt("Enter menu:");
+        selected = input.askInt("Enter menu:");
+        selected = input.askInt("Enter menu:");
+
+        assertThat(selected, is(1));
+    }
+
+    @Test
+    public void whenInputMinus1() {
+        Output out = new StubOutput();
+        Input in = new StubInput(
+                new String[] {"-1"}
+        );
+        ValidateInput input = new ValidateInput(out, in);
+        int selected = input.askInt("Enter menu:");
+        assertThat(selected, is(-1));
+    }
 }
