@@ -2,6 +2,9 @@ package ru.job4j.tracker;
 
 import org.junit.Test;
 
+import java.util.Arrays;
+import java.util.List;
+
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
@@ -16,10 +19,10 @@ public class StartUITest {
         Input in = new StubInput(
                 new String[] {"0", String.valueOf(one.getId()), replaceName, "1"}
         );
-        UserAction[] actions = new UserAction[]{
+        List<UserAction> actions = Arrays.asList(
                 new EditAction(out),
                 new ExitAction(out)
-        };
+        );
         new StartUI(out).init(in, tracker, actions);
         String ln = System.lineSeparator();
         assertThat(out.toString(), is(
@@ -44,10 +47,10 @@ public class StartUITest {
         Input in = new StubInput(
                 new String[] {"0", "test1", "1"}
         );
-        UserAction[] actions = new UserAction[]{
+        List<UserAction> actions = Arrays.asList(
                 new FindNameAction(out),
                 new ExitAction(out)
-        };
+        );
         new StartUI(out).init(in, tracker, actions);
         String ln = System.lineSeparator();
         String item1 = one.toString();
@@ -73,10 +76,10 @@ public class StartUITest {
         Input in = new StubInput(
                 new String[] {"0", String.valueOf(two.getId()), "1"}
         );
-        UserAction[] actions = new UserAction[]{
+        List<UserAction> actions = Arrays.asList(
                 new FindIdAction(out),
                 new ExitAction(out)
-        };
+        );
         new StartUI(out).init(in, tracker, actions);
         String ln = System.lineSeparator();
         String item1 = two.toString();
@@ -102,10 +105,10 @@ public class StartUITest {
         Input in = new StubInput(
                 new String[] {"0", "1"}
         );
-        UserAction[] actions = new UserAction[]{
+        List<UserAction> actions = Arrays.asList(
                 new ShowAction(out),
                 new ExitAction(out)
-        };
+        );
         new StartUI(out).init(in, tracker, actions);
         String ln = System.lineSeparator();
         String item1 = one.toString();
@@ -131,9 +134,9 @@ public class StartUITest {
                 new String[] {"7", "0"}
         );
         Tracker tracker = new Tracker();
-        UserAction[] actions = new UserAction[]{
+        List<UserAction> actions = Arrays.asList(
                 new ExitAction(out)
-        };
+        );
         new StartUI(out).init(in, tracker, actions);
         String ln = System.lineSeparator();
         assertThat(out.toString(), is(
