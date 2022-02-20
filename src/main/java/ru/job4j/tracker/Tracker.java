@@ -41,7 +41,6 @@ public class Tracker {
                 rsl = index;
                 break;
             }
-            index++;
         }
         return rsl;
     }
